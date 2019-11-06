@@ -30,7 +30,7 @@ switch ($type){
         $imglist = $_POST['imglist'];
         $detail = $_POST['detail'];
         $showlist = $_POST['showlist'];
-        $createtime = $_POST['createtime'];
+        $createtime = time();
         $good = new Good($type1,$type2,$goodname,$color,$size,$price,$intro,$count,$img,$imglist,$detail,$showlist,$createtime);
         //执行添加商品的函数
         $service->insertProduct($good);
@@ -54,7 +54,7 @@ switch ($type){
         $imglist = $_POST['imglist'];
         $detail = $_POST['detail'];
         $showlist = $_POST['showlist'];
-        $createtime = $_POST['createtime'];
+        $createtime = time();
         $good = new Good($type1,$type2,$goodname,$color,$size,$price,$intro,$count,$img,$imglist,$detail,$showlist,$createtime);
         //执行修改商品的函数
         $service->updateProduct($id,$good);
