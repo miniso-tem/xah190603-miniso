@@ -8,7 +8,7 @@ class ProductService{
     }
     //后台管理系统添加商品
     function insertProduct($good){
-        $sql = "insert into goodlist (typ1,type2,goodname,color,size,price,intro,count,img,imglist,detail,showlist,createtime) values ('{$good->type1}','{$good->type2}','{$good->goodname}','{$good->color}','{$good->size}','{$good->price}','{$good->count}','{$good->img}','{$good->imglist}'，'{$good->detail}','{$good->showlist}','{$good->createtime}')";
+        $sql = "insert into goodlist (typ1,type2,goodname,color,size,price,intro,count,img,imglist,detail,showlist,createtime) values ('{$good->type1}','{$good->type2}','{$good->goodname}','{$good->color}','{$good->size}','{$good->price}','{$good->intro}','{$good->count}','{$good->img}','{$good->imglist}'，'{$good->detail}','{$good->showlist}','{$good->createtime}')";
         $res = $this->db->query($sql);
         if($res){
             echo '{"code":"1"}';
@@ -28,7 +28,7 @@ class ProductService{
     }
     //后台管理系统修改商品
     function updateProduct($goodid,$good){
-        $sql = "update goodlist set tyep1 = '{$good->type1}',type2 = '{$good->type2}',goodname = '{$good->goodname}',color = '{$good->color}',size = '{$good->size}',price = '{$good->price}',count = '{$good->count}',img = '{$good->img}',goodlist = '{$good->goodlist}',detail = '{$good->detail}',showlist = '{$good->showlist}',createtime = '{$good->createtime}' where ID = $goodid";
+        $sql = "update goodlist set tyep1 = '{$good->type1}',type2 = '{$good->type2}',goodname = '{$good->goodname}',color = '{$good->color}',size = '{$good->size}',price = '{$good->price}',intro = '{$good->intro}',count = '{$good->count}',img = '{$good->img}',goodlist = '{$good->goodlist}',detail = '{$good->detail}',showlist = '{$good->showlist}',createtime = '{$good->createtime}' where ID = $goodid";
         $res = $this->db->query($sql);
         if($res){
             echo '{"code":"1"}';
