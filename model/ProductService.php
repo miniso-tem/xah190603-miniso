@@ -8,10 +8,15 @@ class ProductService{
     }
     //后台管理系统添加商品
     function insertProduct($good){
-        $sql = "insert into goodlist (typ1,type2,goodname,color,size,price,intro,count,img,imglist,detail,showlist,createtime) values ('{$good->type1}','{$good->type2}','{$good->goodname}','{$good->color}','{$good->size}','{$good->price}','{$good->intro}','{$good->count}','{$good->img}','{$good->imglist}'，'{$good->detail}','{$good->showlist}','{$good->createtime}')";
+        $sql = "insert into goodlist (ID,type1,type2,goodname,color,size,price,intro,count,img,imglist,detail,showlist,createtime) values (null,'{$good->type1}','{$good->type2}','{$good->goodname}','{$good->color}','{$good->size}','{$good->price}','{$good->intro}','{$good->count}','{$good->img}','{$good->imglist}'，'{$good->detail}','{$good->showlist}','{$good->createtime}')";
         $res = $this->db->query($sql);
         if($res){
-            echo '{"code":"1"}';
+            //查询刚刚添加的数据的ID值
+            $sql_id = "select ID from goodlist order by ID desc limit 0,1";
+            $sql_res = $this->db->mysqli->query($sql_id);
+            $id = mysqli_fetch_assoc($sql_res)['ID'];
+            //'{"code":"1", "id":"89"}'
+            echo '{"code":"1","id":"'.$id.'"}';
         }else{
             echo '{"code":"0"}';
         }
