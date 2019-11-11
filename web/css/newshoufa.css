@@ -1,0 +1,282 @@
+body {
+    background: rgb(242, 242, 242);
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333;
+    font-family: "Microsoft YaHei"!important;
+    margin: 0;
+    padding: 0;
+}
+
+.newTop {
+    margin-left: 130px;
+}
+
+.allgood span:nth-child(2) {
+    color: #CCCCCC;
+}
+
+.newTop img {
+    width: 1090px;
+    height: 310px;
+}
+
+.allgood {
+    padding: 20px 0 20px 0;
+}
+
+.newlist {
+    background: white;
+    width: 1090px;
+    margin-left: 130px;
+    margin-top: 20px;
+    position: relative;
+    z-index: -2;
+}
+
+.newTitle {
+    font-weight: 100;
+    font-size: 24px;
+    padding-top: 30px;
+    margin-left: 500px;
+}
+
+.x-w1090.keywords .itemList {
+    padding-top: 9px;
+}
+
+.itemList {
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.x-w1090 {
+    text-align: center;
+}
+
+.clearfix::before {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+    zoom: 1;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix::after,
+.clearfix::before {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+    zoom: 1;
+}
+
+.x-w1090 .item {
+    width: 245px;
+    margin-bottom: 40px;
+}
+
+.itemList .item {
+    height: 390px;
+}
+
+.itemList .item {
+    width: 262px;
+    float: left;
+    margin-right: 10px;
+}
+
+.itemList .imgbox,
+.itemList .item,
+.limitLeft,
+.limitLeft input,
+.nav,
+.nav .menuBox,
+.x-banner,
+.x-footer {
+    text-align: center;
+}
+
+.x-w1090 .imgbox {
+    width: 245px;
+    height: 245px;
+}
+
+.itemList .imgbox {
+    display: inline-block;
+    width: 265px;
+    height: 265px;
+    overflow: hidden;
+    background-color: #F4F4F4;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.imgbox {
+    background-color: #f2f2f2;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.itemList .imgbox img {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-transition: 1s all;
+    transition: 1s all;
+}
+
+.imgbox a,
+.imgbox img {
+    height: 100%;
+}
+
+.img_lazyloaded {
+    background: #FFF;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+.x-w1090 .imgbox {
+    width: 245px;
+    height: 245px;
+}
+
+.itemList .imgbox {
+    display: inline-block;
+    width: 265px;
+    height: 265px;
+    overflow: hidden;
+    background-color: #F4F4F4;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.itemList .tagBox {
+    height: 20px;
+}
+
+.itemList .title {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    width: 168px;
+    font-size: 14px;
+    line-height: 25px;
+    overflow: hidden;
+}
+
+.cartBoard .list .title a,
+.itemList .title,
+.limitRight .text .name,
+.search .searchBoard li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.x-w1090.keywords .itemList .item>span {
+    padding-bottom: 11px;
+}
+
+.itemList span {
+    font-size: 14px;
+    color: #d9232e;
+}
+
+.bar,
+.cart,
+.change,
+.codeBar,
+.count,
+.data,
+.defaultAd,
+.del,
+.detailContent,
+.guide,
+.hot,
+.iconbox,
+.login,
+.logo,
+.norm,
+.normBtn,
+.outerBar,
+.price,
+.round,
+.sale,
+.search,
+.tag,
+.tipText,
+.topLeft,
+.topRight,
+.userBoard,
+.x-checkbox,
+.x-codeArea,
+.x-del,
+.x-gender,
+.x-inlineBlock,
+.x-radio,
+a,
+h1,
+span,
+ul {
+    display: inline-block;
+}
+
+.x-w1090.keywords .itemList .desc {
+    width: 130px;
+    padding-top: 11px;
+    display: inline-block;
+    border-top: 1px solid #ddd;
+    color: #999;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.imgbox img:hover {
+    transition: all 1s;
+    transform: scale(1.05);
+}
+
+.desc {
+    cursor: pointer!important;
+}

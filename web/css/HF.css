@@ -1,0 +1,640 @@
+/*头部*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333;
+    font-family: "Microsoft YaHei" !important;
+}
+
+.bar,
+.cart,
+.change,
+.codeBar,
+.count,
+.data,
+.defaultAd,
+.del,
+.detailContent,
+.guide,
+.hot,
+.iconbox,
+.login,
+.logo,
+.norm,
+.normBtn,
+.outerBar,
+.price,
+.round,
+.sale,
+.search,
+.tag,
+.tipText,
+.topLeft,
+.topRight,
+.userBoard,
+.x-checkbox,
+.x-codeArea,
+.x-del,
+.x-gender,
+.x-inlineBlock,
+.x-radio,
+a,
+h1,
+span,
+ul {
+    display: inline-block;
+}
+
+.topRight .login,
+.topRight .userBoard,
+.topRight ul,
+.topRight ul a,
+.topRight ul div,
+.userBoard .more,
+.userBoard .userID span,
+.userBoard .vip {
+    vertical-align: middle;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.headerTop {
+    height: 26px;
+    background-color: #000;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.x-main {
+    width: 1090px;
+    margin: 0 auto;
+}
+
+.topLeft {
+    float: left;
+}
+
+.topRight {
+    float: right;
+}
+
+.topRight .login span {
+    padding-right: 21px;
+}
+
+.imgbox,
+.rel,
+.x-main {
+    position: relative;
+}
+
+.topLeft span,
+.topRight a {
+    color: #ccc;
+}
+
+.userBoard {
+    cursor: pointer;
+}
+
+.x-hide {
+    display: none !important;
+}
+
+.topRight ul {
+    margin-top: -23px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.topRight ul li {
+    padding-right: 14px;
+}
+
+.x-fll,
+li {
+    float: left;
+}
+
+.topRight ul li ::before {
+    content: "|";
+    margin-right: 14px;
+    ;
+}
+
+
+/* 头部下 */
+
+.headerBottom {
+    width: 100%;
+    -webkit-box-shadow: 0 0 10px rgba(178, 178, 178, .3);
+    box-shadow: 0 0 10px rgba(178, 178, 178, .3);
+    padding: 20px 0 0 0;
+    z-index: 9;
+}
+
+.headerBottom,
+.search {
+    position: relative;
+}
+
+.headerBottom,
+.logo {
+    background-color: #fff;
+}
+
+.x-main-x {
+    text-align: center;
+    position: initial;
+}
+
+.x-main {
+    width: 1090px;
+    margin: 0 auto;
+}
+
+.imgbox,
+.rel,
+.x-main {
+    position: relative;
+}
+
+.logo {
+    width: 100px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-top: 4px;
+}
+
+.headerBottom,
+.logo {
+    background-color: #fff;
+}
+
+.logo img {
+    width: 100%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.x-floor-x {
+    position: absolute;
+    top: 11px;
+    right: 61px;
+}
+
+.link div,
+.x-floor-x {
+    display: inline-block;
+}
+
+.headerBottom,
+.search {
+    position: relative;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+
+/* 搜索框 */
+
+.search .searchBtn {
+    width: 16px;
+    height: 16px;
+    top: 10px;
+    left: 10px;
+    background: url(../../static/images/search.png) center center no-repeat #fff;
+}
+
+.cart,
+.cart .news,
+.cartBoard,
+.search .searchBoard,
+.search .searchBtn {
+    position: absolute;
+}
+
+.button-next,
+.button-prev,
+button {
+    cursor: pointer;
+}
+
+button {
+    border-radius: 3px;
+    color: #fff;
+}
+
+.search input {
+    height: 34px;
+    width: 274px;
+    line-height: 34px;
+    border-radius: 30px;
+    padding-left: 37px;
+    color: #999;
+}
+
+input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+
+/* 搜索下拉框即内容 */
+
+.search .searchBoard {
+    width: 278px;
+    padding: 7px 17px;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 10px rgba(178, 178, 178, .3);
+    box-shadow: 0 0 10px rgba(178, 178, 178, .3);
+    top: 45px;
+    left: 0;
+    z-index: 50;
+    text-align: left;
+    display: none;
+}
+
+.search .recommend {
+    padding-top: 14px;
+}
+
+.search .searchBoard h1 {
+    display: block;
+}
+
+.x-gray {
+    color: #999 !important;
+}
+
+b,
+h1,
+h2,
+h3 {
+    font-weight: 100;
+}
+
+.search .searchBoard li {
+    cursor: pointer;
+    float: none;
+    padding-top: 8px;
+    width: 240px;
+    overflow: hidden;
+}
+
+.cartBoard .list .title p,
+.nav .x-floor,
+.search .searchBoard li {
+    display: inline-block;
+}
+
+.cartBoard .list .title a,
+.itemList .title,
+.limitRight .text .name,
+.search .searchBoard li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* 购物车 */
+
+.scroll-logo{
+	position: absolute;
+	left: 100px;
+    top: 25px;
+    width: 80px;
+    display: none;
+}
+
+.cart {
+    width: 35px;
+    height: 35px;
+    top: 18px;
+    right: 12px;
+    cursor: pointer;
+    background: url(../../static/images/cart.png) 10px 0 no-repeat;
+}
+.car {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-left: 4px;
+}
+
+.cart .news {
+    min-width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    padding: 0 2px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #d9232e;
+    top: -10px;
+    right: -10px;
+}
+
+.nav {
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.nav9{
+	position: relative;
+}
+.nav9>a{
+	font-weight: bolder;
+	position: absolute;
+	font-size: 12px;
+	display: none;
+}
+.nav9>a:nth-child(1){
+	left: 90%;
+
+}
+.nav9>a:nth-child(2){
+	left: 93%;
+
+}
+
+.itemList .imgbox,
+.itemList .item,
+.limitLeft,
+.limitLeft input,
+.nav,
+.nav .menuBox,
+.x-banner,
+.x-footer {
+    text-align: center;
+}
+
+.nav .navRight {
+    height: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.nav9 li {
+    box-sizing: border-box;
+    padding: 0 28px;
+    padding-bottom: 50px;
+}
+
+.x-fll,
+li {
+    float: left;
+}
+
+
+/* .nav .secMenu .x-main {
+    display: flex;
+    justify-content: center;
+} */
+
+.x-main {
+    width: 1090px;
+    margin: 0 auto;
+}
+
+.x-main-p>div {
+    float: left;
+    margin-left: 100px;
+}
+
+.imgbox,
+.rel,
+.x-main {
+    position: relative;
+}
+
+.nav li>a {
+    font-size: 14px;
+    padding-bottom: 9px;
+    line-height: 20px;
+    color: #333;
+    border-bottom: 3px solid #fff;
+}
+
+.nav li>a,
+.x-blod {
+    font-weight: 700;
+}
+
+.nav .active>a,
+.nav .navLeft li:hover>a,
+.nav .navRight li:hover>a {
+    color: #d9232e;
+    border-bottom: 3px solid #d9232e;
+}
+
+.nav .secMenu {
+    padding-top: 34px;
+    padding-bottom: 35px;
+    width: 126%;
+    position: absolute;
+    background-color: #fff;
+    top: 80px;
+    left: -137px;
+    z-index: 201;
+    -webkit-box-shadow: 0 3px 3px rgba(178, 178, 178, .3);
+    box-shadow: 0 3px 3px rgba(178, 178, 178, .3);
+    overflow: hidden;
+    display: none;
+}
+
+.navLeft li:hover .secMenu {
+    display: block;
+}
+
+.nav .navLeft,
+.nav .navRight {
+    line-height: 20px;
+    vertical-align: top;
+}
+img {
+    vertical-align: middle;
+}
+.x-header{
+	position: relative;
+	z-index: 900;
+}
+/*固定定位表头*/
+.fixed{
+	display: block;
+}
+.zuishangmian{
+	display: none;
+}
+
+
+
+
+/*尾部*/
+.footerBottom {
+    width: 100%;
+    height: 210px;
+    background-color: #414141;
+}
+
+.imgbox,
+.rel,
+.x-main {
+    position: relative;
+}
+
+.footerBottom .borderB {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #5c5c5c;
+    padding-top: 40px;
+}
+
+.footerBottom .borderB li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.footerBottom .borderB li img,
+.footerBottom .borderB li span,
+.link a,
+.link div {
+    vertical-align: middle;
+}
+
+.link {
+    padding-top: 20px;
+    margin-left: 32%;
+}
+
+.link a {
+    color: #ccc;
+    margin-left: 16px;
+}
+
+.footerBottom p {
+    color: #ccc;
+}
+
+.itemList .imgbox,
+.itemList .item,
+.limitLeft,
+.limitLeft input,
+.nav,
+.nav .menuBox,
+.x-banner,
+.x-footer {
+    text-align: center;
+}
+
+.footerBottom .borderB li {
+    width: 29%;
+}
+
+.footerBottom .borderB li span {
+    color: #fff;
+    font-size: 18px;
+    line-height: 55px;
+}
+
+.borderB li:nth-of-type(1) {
+    margin-left: 13%;
+}
+
+.p-1 {
+    margin-left: 37%;
+}
+
+.p-2 {
+    margin-left: 39%;
+}
+
+
+.footerTop {
+    padding: 40px 0;
+}
+
+.x-whiteBoard {
+    background-color: #fff;
+    position: relative;
+    z-index: -1;
+}
+
+.footerTop h1 {
+    font-size: 16px;
+    display: block;
+}
+
+b,
+h1,
+h2,
+h3 {
+    font-weight: 100;
+}
+
+.footerTop h2 {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 31px 0 22px;
+}
+
+.footerTop p,
+.footerTop span {
+    font-size: 14px;
+}
+
+.footerTop .middle {
+    height: 170px;
+    padding: 0 97px 0 91px;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    margin: 0 91px 0 112px;
+}
+
+.footerTop p {
+    margin-top: 28px;
+    width: 243px;
+    line-height: 25px;
+    text-align: left;
+}
+
+.footerTop p,
+.footerTop span {
+    font-size: 14px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.bigImg {
+    width: 1349px;
+    height: 420px;
+}
+
+.bigImg img {
+    width: 1349px;
+    height: 420px;
+}
