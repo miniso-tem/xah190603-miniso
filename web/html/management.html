@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../layui-v2.5.4/layui/css/layui.css"/>
+		<link rel="stylesheet" href="../css/management.css"/>
+	</head>
+	<body>
+		<!--登录界面-->
+		<div class="l-wrap">
+			<div class="login">
+				<div class="login-box">
+					<div class="login-name">M I N I S O</div>
+					<p>后台管理系统</p>
+				</div>
+				<div class="login-user">
+					<span>用户名</span>
+					<input type="text" class="m-username" placeholder="请输入账号">
+				</div>
+				<div class="login-pswd">
+					<span>密码</span>
+					<input type="password" class='m-password' placeholder="请输入密码">
+				</div>
+				<div class="pswd-error">输入内容错误，请重新输入！	</div>
+				<div class="sure-login">确认登录</div>
+			</div>
+		</div>
+		
+		<!--后台管理界面-->
+		<div class="m-wrap">
+			<div class="m-title">MINISO后台管理系统</div>
+			<!--菜单栏部分-->
+			<div class="m-menu">
+				 <div class="m-mark">
+				 	<img src="../img/logo-1-2.png" alt="" />
+				 </div>   
+				 <div class="m-name">M I N I S O</div>
+				 <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo" style="margin-right: 10px;">
+					 <li class="layui-nav-item" id="statistics">
+					    <a href="javascript:;" class="btns active-btn" data-id='0'>数据统计</a>
+					 </li>
+					 <li class="layui-nav-item" id="user">
+					    <a href="javascript:;" class="btns" data-id='1'>用户管理</a>
+					 </li>
+					 <li class="layui-nav-item" id='orderList'>
+					    <a href="javascript:;" class="btns" data-id='2'>订单管理</a>
+					 </li>
+					 <li class="layui-nav-item" id="address">
+					    <a href="javascript:;" class="btns" data-id='3'>收货地址管理</a>
+					 </li>
+					 <li class="layui-nav-item" id="checkeval">
+					    <a href="javascript:;" class="btns" data-id='4'>商品评价管理</a>
+					 </li>
+					 <li class="layui-nav-item">
+					    <a href="javascript:;" class="btns" data-id='5'>商品管理</a>
+					    <dl class="layui-nav-child">
+					      <dd><a href="javascript:;" data-type1='1' onclick="typStyle1(this)">家居</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">拖鞋</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">清洁保鲜</a></li>
+					      		<li><a href="javascript:;" data-type2='3' onclick="typStyle2(this)">家饰</a></li>
+					      		<li><a href="javascript:;" data-type2='4' onclick="typStyle2(this)">收纳</a></li>
+					      		<li><a href="javascript:;" data-type2='5' onclick="typStyle2(this)">浴室用品</a></li>
+					      		<li><a href="javascript:;" data-type2='6' onclick="typStyle2(this)">床品</a></li>
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='2' onclick="typStyle1(this)">餐厨</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">杯壶</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">餐具</a></li>
+					      		<li><a href="javascript:;" data-type2='3' onclick="typStyle2(this)">功能厨具</a></li>
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='3' onclick="typStyle1(this)">服装</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">T桖</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">运动服饰</a></li>
+					      		<li><a href="javascript:;" data-type2='3' onclick="typStyle2(this)">内衣</a></li>
+					      		<li><a href="javascript:;" data-type2='4' onclick="typStyle2(this)">丝袜</a></li>
+					      		<li><a href="javascript:;" data-type2='5' onclick="typStyle2(this)">袜子</a></li>
+					      		<li><a href="javascript:;" data-type2='6' onclick="typStyle2(this)">内裤</a></li>
+					      		<li><a href="javascript:;" data-type2='7' onclick="typStyle2(this)">配饰</a></li>
+					      		
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='4' onclick="typStyle1(this)">美护</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">美妆</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">身体护理</a></li>
+					      		<li><a href="javascript:;" data-type2='3' onclick="typStyle2(this)">护肤品</a></li>
+					      		<li><a href="javascript:;" data-type2='4' onclick="typStyle2(this)">口腔护理</a></li>
+					      		<li><a href="javascript:;" data-type2='5' onclick="typStyle2(this)">洗发护发</a></li>
+					      		<li><a href="javascript:;" data-type2='6' onclick="typStyle2(this)">美护工具</a></li>
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='5' onclick="typStyle1(this)">出行</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">旅行用品</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">箱包</a></li>
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='6' onclick="typStyle1(this)">电器</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">生活电器</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">数码</a></li>
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='7' onclick="typStyle1(this)">杂货</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">雨具</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">零食</a></li>
+					      		<li><a href="javascript:;" data-type2='3' onclick="typStyle2(this)">文具</a></li>
+					      		<li><a href="javascript:;" data-type2='4' onclick="typStyle2(this)">玩具</a></li>
+					      	</ol>
+					      </dd>
+					      <dd><a href="javascript:;" data-type1='8' onclick="typStyle1(this)">系列</a>
+					      	<ol class="layui-nav-child">
+					      		<li><a href="javascript:;" data-type2='1' onclick="typStyle2(this)">粉红豹</a></li>
+					      		<li><a href="javascript:;" data-type2='2' onclick="typStyle2(this)">裸熊</a></li>
+					      		<li><a href="javascript:;" data-type2='3' onclick="typStyle2(this)">芝麻街</a></li>
+					      		<li><a href="javascript:;" data-type2='4' onclick="typStyle2(this)">三丽鸥</a></li>
+					      		<li><a href="javascript:;" data-type2='5' onclick="typStyle2(this)">潘通</a></li>
+					      		<li><a href="javascript:;" data-type2='6' onclick="typStyle2(this)">Kakao Friends</a></li>
+					      	</ol>
+					      </dd>
+					    </dl>
+					 </li>
+				 </ul>
+				 
+			</div>
+			
+			<!--商品操作部分-->
+			<div class="m-operation">
+				<div class="card active-card">
+					<div class="main" style="width: 730px; height: 600px;"></div>
+					<div class="main-fan" style="width: 730px; height: 600px;"></div>
+				</div>
+				<!--用户列表-->
+				<div class="card">
+					<table class="user">
+						<tr style="background: ghostwhite;">
+						    <th>用户名</th>
+						    <th>手机号码</th>
+						    <th>头像</th>
+						    <th>性别</th>
+						    <th>生日</th>
+						</tr> 
+					</table>
+				</div>
+				<!--订单列表-->
+				<div class="card">
+					<table class="list">
+						<tr style="background: ghostwhite;">
+							<th>用户名</th>
+							<th>商品信息</th>
+							<th>收货人信息</th>
+							<th>时间</th>
+							<th>订单状态</th>
+							<th>操作</th>
+						</tr>
+						<!--<tr>
+							<td>Tom</td>
+							<td>男士拖鞋</td>
+							<td>陕西省西安市雁塔区</td>
+							<td>23453534</td>
+							<td>未发货</td>
+							<td>
+								<div class="list-view">修改</div>
+							</td>
+						</tr>-->
+					</table>
+				</div>
+				<!--收货地址列表-->
+				<div class="card">
+					<table class="address">
+						<tr style="background: ghostwhite;">
+							<th>用户名</th>
+							<th>收货人姓名</th>
+							<th>手机号</th>
+							<th>地区</th>
+							<th>详细地址</th>
+							<th>默认状态</th>
+						</tr>
+					</table>
+				</div>
+				<!--商品评价管理列表-->
+				<div class="card">
+					<table class="evaluation">
+						<tr style="background: ghostwhite;">
+							<th>用户 ID</th>
+							<th>商品 ID</th>
+							<th>评价内容</th>
+							<th>评价日期</th>
+						</tr>
+					</table>
+				</div>
+				<!--商品管理列表-->
+				<!--商品管理的以及菜单-->
+				<div class="card goods-table"></div>
+			<!--遮罩层-->
+			<div class="m-mask"></div>
+			<!--订单管理的修改弹框-->
+			<div class="m-list-modal">
+				<div class="list-box">
+					<span>订单状态</span>
+					<select name="">
+						<option value="">0</option>
+						<option value="">1</option>
+						<option value="">2</option>
+					</select>
+				</div>
+				<div class="list-btns">
+					<div class="exit">取消</div>
+					<div class="list-sure">确认</div>
+				</div>
+			</div>
+			<!--商品管理的修改弹框-->
+			<div class="m-goods-modal">
+				<div class="m-goods-box">
+					<span>typ1：</span>
+					<input type="text" class="goods-typ1">
+				</div>
+				<div class="m-goods-box">
+					<span>typ2：</span>
+					<input type="text" class="goods-typ2">
+				</div>
+				<div class="m-goods-box">
+					<span>商品名称：</span>
+					<input type="text" class="goods-name">
+				</div>
+				<div class="m-goods-box">
+					<span>颜色：</span>
+					<input type="text" class="goods-color">
+				</div>
+				<div class="m-goods-box">
+					<span>大小：</span>
+					<input type="text" class="goods-size">
+				</div>
+				<div class="m-goods-box">
+					<span>价格：</span>
+					<input type="text" class="goods-price">
+				</div>
+				<div class="m-goods-box">
+					<span>介绍：</span>
+					<input type="text" class="goods-intro">
+				</div>
+				<div class="m-goods-box">
+					<span>数量：</span>
+					<input type="text" class="goods-count">
+				</div>
+				<div class="m-goods-box">
+					<span>图片：</span>
+					<div class="select sel-img">选择文件</div>
+					<input type="file" class="goods-img">
+					<div class="up-btn up-img-btn" onclick="appearBox(this)">上传</div>
+					<div class="img-box">
+						<img src="" class="up-img">
+					</div>
+				</div>
+				<div class="m-goods-box">
+					<span>图片列表：</span>
+					<div class="select sel-imglist">选择文件</div>
+					<input type="file" class="goods-imglist">
+					<div class="up-btn up-imglist-btn" onclick="appearBox(this)">上传</div>
+					<div class="imglist-box">
+						<!--<div class="li-imglist">
+							<img src="../img/1.jpg" class="up-imglist">
+							<div class="delete-img" onclick="deleteImg(this)">x</div>
+						</div>-->
+					</div>
+				</div>
+				<div class="m-goods-box">
+					<span>详情介绍：</span>
+					<input type="text" class="goods-details">
+			 	</div>
+				<div class="m-goods-box">
+					<span>详情页大图</span>
+					<div class="select sel-big">选择文件</div>
+					<input type="file" class="goods-big">
+					<div class="up-btn up-big-btn" onclick="appearBox(this)">上传</div>
+					<div class="bigimg-box">
+						<!--<div class="li-bigimg">
+							<img src="../img/1.jpg" class="up-bigimg">
+							<div class="delete-bigimg" onclick="deleteImg(this)">x</div>
+						</div>-->
+					</div>
+				</div>
+				<div class="m-goods-btns">
+					<div class="m-goods-sure">确认</div>
+					<div class="m-goods-exit">取消</div>
+				</div>
+			</div>
+			<!--删除提醒弹框-->
+			<div class="delete-remind">
+				<p>确认删除该条商品吗？</p>
+				<div class="delete-sure">确认删除</div>
+			</div>
+			<div class="up-success">
+				<p>修改成功</p>
+				<div class="success-sure">确认</div>
+			</div>
+		</div>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src='../../layui-v2.5.4/layui/layui.all.js'></script>
+		<script src='../js/jquery-1.11.3.min.js'></script>
+		<script src='../js/echarts.min.js'></script>
+		<script src='../js/upload.js'></script>
+		<script src='../js/all.js'></script>
+		<script src='../js/management.js'></script>
+	</body>
+</html>

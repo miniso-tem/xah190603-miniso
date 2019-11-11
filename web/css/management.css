@@ -1,0 +1,421 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/**登录*/
+.l-wrap{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../img/login-background.jpg);
+	background-size: 100% 100%;
+	z-index: 2;
+	/*display: none;*/
+}
+.login{
+	width: 430px;
+	/*height: 330px;*/
+	box-shadow: 0 0 10px black;
+	position: absolute;
+	top: 250px;
+	left:calc((100% - 400px) / 2);
+	background: white;
+	border-radius: 15px;
+	padding: 10px;
+	text-align: center;
+}
+.login-name{
+	font-size: 45px;
+	font-weight: bolder;
+}
+.login-box p{
+	font-size: 25px;
+	font-weight: bolder;
+}
+.login span{
+	display: inline-block;
+	font-size: 16px;
+	width: 80px;
+}
+.login input{
+	height: 35px;
+	width: 300px;
+}
+.login-user, .login-pswd{
+	margin-top: 20px;
+}
+.pswd-error{
+	width: 300px;
+	font-size: 16px;
+	color: red;
+	margin: 20px auto;
+	display: none;
+}
+.sure-login{
+	border: 1px solid gainsboro;
+	width: 100px;
+	margin: 30px auto;
+	padding: 5px 8px;
+	border-radius: 13px;
+	font-size: 16px;
+	background: #009688;
+	color: white;
+	cursor: pointer;
+}
+/**后台管理界面*/
+.m-wrap{
+	widows: 100vw;
+}
+.m-title{
+	height: 120px;
+	background: #3c8dbc;
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	font-weight: bolder;
+	line-height: 120px;
+}
+.m-menu{
+	width: 220px;
+	height: calc(100vh - 132px);
+	text-align: center;
+	background: #2F4056;
+	color: wheat;
+	overflow: auto;
+}
+.m-mark{
+	padding-top: 30px;
+}
+.m-name{
+	margin: 20px 0 40px 0;
+	font-size: 30px;
+	font-weight: bolder;
+	color: white;
+}
+.main, .main-fan{
+	margin-top: 50px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.m-operation{
+	width: calc(100vw - 243px);
+	height: calc(100vh - 132px);
+	padding: 15px;
+	overflow: auto;
+}
+.m-menu, .m-operation{
+	display: inline-block;
+	vertical-align: top;
+}
+.card table{
+	width: 100%;
+    border-collapse: collapse; /* 单元格边框合并 */
+    color: #666;
+    text-align: center;
+    font-size: 18px;
+    display: table;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.card table img{
+	width: 80px;
+}
+.l-list, .b-list{
+	width: 120px;
+	height: 120px;
+	overflow: auto;
+}
+.l-list img, .b-list img{
+	margin: 8px;
+}
+tr th, tr td{
+	width: 200px;
+	height: 30px;
+	border: 1px solid gainsboro;
+	padding: 10px;
+}
+.goods{  
+    width:600px;  
+    text-align:center;  
+}  
+.goods tr th,td{  
+    height:30px;  
+    line-height:30px;  
+    border:1px solid #ccc;  
+}  
+#pageStyle{  
+    display:inline-block;  
+    width:32px;  
+    height:32px;  
+    border:1px solid #CCC;  
+    line-height:32px;  
+    text-align:center;  
+    color:#999;  
+    margin-top:20px;  
+    text-decoration:none;  
+}  
+#pageStyle:hover{  
+    background-color:#CCC;  
+}  
+#pageStyle .active{  
+    background-color:#0CF;  
+    color:#ffffff;  
+}        
+.card{
+	display: none;
+}
+.active-card{
+	display: block;
+}
+/**添加商品按钮*/
+.goods-add{
+	width: 100px;
+	text-align: center;
+	border: 1px solid gainsboro;
+	border-radius: 8px;
+	padding: 6px 8px;
+	margin-bottom: 10px;
+	background: orange;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+}
+/*订单管理修改状态的按钮**/
+.list-view{
+	width: 60px;
+	border: 1px solid gainsboro;
+	border-radius: 8px;
+	background: blue;
+	color: wheat;
+	padding: 5px 10px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+/**遮罩层*/
+.m-mask{
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	opacity: .4;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.m-list-modal{
+	width: 450px;
+	height: 150px;
+	background: #fff;
+	box-shadow: 0 0 10px black;
+	position: fixed;
+	left: calc((100% - 400px) / 2);
+	top: 300px;
+	border-radius: 12px;
+	display: none;
+}
+.list-box{
+	margin-top: 10px;
+	text-align: center;
+	padding: 15px;
+}
+.list-box span{
+	width: 100px;
+	font-size: 18px;
+	font-weight: bolder;
+	padding: 10px;
+}
+.list-box select {
+	width: 310px;
+	height: 35px;
+}
+.list-btns{
+	margin-top: 10px;
+	float: right;
+	padding-right: 20px;
+}
+.exit, .list-sure{
+	display: inline-block;;
+	vertical-align: middle;
+	border: 1px solid gray;
+	padding: 8px 10px;
+	font-size: 16px;
+	border-radius: 8px;
+	margin: 10px;
+	cursor: pointer;
+}
+.list-sure{
+	background: #337ab7;
+	color: white;
+}
+/**商品管理的修改删除按钮*/
+.goods-view, .goods-exit{
+	width: 80px;
+	border: 1px solid gainsboro;
+	border-radius: 8px;
+	margin: 5px;
+	cursor: pointer;	
+	background: #3C8DBC;
+	padding: 5px;
+	color: white;
+}
+.goods-exit{
+	background: red;
+}
+/**商品管理的弹框*/
+.m-goods-modal{
+	box-shadow: 0 0 10px black;
+	border-radius: 13px;
+	width: 540px;
+	height: 700px;
+	background: white;
+	position: fixed;
+	top: 30px;
+	padding: 10px;
+	overflow: auto;	
+	left: calc((100% - 500px) / 2);
+	display: none;
+}
+.m-goods-box{
+	margin-top: 15px;
+	position: relative;
+}
+.m-goods-box span{
+	display: inline-block;
+	width: 100px;
+	font-size: 18px;
+	font-weight: bolder;
+	text-align: center;
+	text-align: right;
+}
+.m-goods-box input{
+	width: 380px;
+	height: 35px;
+}
+.img-box, .imglist-box, .bigimg-box{
+	width: 380px;
+	border: 1px solid gainsboro;
+	border-radius: 13px;
+	height: 80px;
+	margin-top: 10px;
+	margin-left: 100px;
+	display: none; 
+	/*display: flex;*/
+	flex-wrap: wrap;
+	overflow: auto;
+}
+.li-bigimg, .li-imglist{
+	display: inline-block;
+}
+.img-box img,
+.imglist-box img,
+.bigimg-box img {
+	width: 75px;
+}
+.li-imglist, .li-bigimg{
+	position: relative;
+}
+.delete-img, .delete-bigimg{
+	width: 16px;
+	height: 16px;
+	border: 1px solid red;
+	border-radius: 8px;
+	background: red;
+	text-align: center;
+	line-height: 14px;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 60px;
+	cursor: pointer;
+}
+.up-btn{
+	width: 50px;
+	height: 35px;
+	border: 1px solid gainsboro;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	background: #3C8DBC;
+	color: white;
+}
+.m-goods-box .goods-img, 
+.m-goods-box .goods-imglist, 
+.m-goods-box .goods-big{
+	width: 328px;
+	border: 1px solid lightgray;
+	line-height: 35px;
+	opacity: 0;
+}
+.m-goods-box .select{
+	width: 308px;
+	position: absolute;
+	border: 1px solid gainsboro;
+	top: 0px;
+	left: 104px;
+	cursor: pointer;
+	height: 35px;
+	font-size: 16px;
+	line-height: 35px;
+	padding-left: 10px;
+}
+.up-img-btn, .goods-img{
+	display: inline-block;
+	vertical-align: top;
+}
+.up-imglist-btn, .goods-imglist{
+	display: inline-block;
+	vertical-align: top;
+}
+.up-big-btn, .goods-big{
+	display: inline-block;
+	vertical-align: top;
+}
+.m-goods-btns{
+	margin-top: 20px;
+}
+.m-goods-exit, .m-goods-sure{
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid gainsboro;
+	padding: 8px 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	float: right;
+	margin-right: 40px;
+	font-size: 16px;
+}	
+.m-goods-sure{
+	background: #3C8DBC;
+	color: white;
+}
+/**确认删除商品按钮*/
+.delete-remind, .up-success{
+	border: 1px solid gainsboro;
+	border-radius: 13px;
+	width: 300px;
+	position: fixed;
+	background: white;
+	top: 300px;
+	left: calc((100% - 300px) / 2);
+	padding: 18px;
+	font-size: 18px;
+	display: none;
+}
+.delete-sure, .success-sure{
+	border: 1px solid gainsboro;
+	width: 100px;
+	padding: 6px 8px;
+	text-align: center;
+	border-radius: 8px;
+	color: white;
+	background: #3C8DBC;
+	margin-top: 20px;
+	float: right;
+	cursor: pointer;
+}
