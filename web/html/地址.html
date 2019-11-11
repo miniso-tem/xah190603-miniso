@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    用户id：
+    <input type="text" class="u-id"> <br>
+收货人姓名
+    <input type="text" class="u-name"> <br>
+收货人电话
+    <input type="text" class="u-tel"><br>
+收货人地区
+    <input type="text" class="u-region"><br>
+收货人详细地址
+    <input type="text" class="u-address"><br>
+是否默认地址
+    <input type="text" class="u-status"><br>
+    <button class="add">添加地址</button> <br>
+    <input type="text" class="selid"> <button class="sel">查询用户地址</button>
+    <br>
+    <button class="check">查看所有用户收货地址</button>
+    <br>
+    <input type="text" class="delid" placeholder="要删除的地址的id"> <button class="delbtn">删除某个地址</button>
+    <input type="text" class="upid" placeholder="要修改的地址的id"> <button class="upbtn">修改地址信息</button>
+    <br>
+    <button class="order" placeholder="按用户id排序">按用户id排序</button>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        //添加地址
+        $('.add').click(function(){
+            const userid = $('.u-id').val();
+            const name = $('.u-name').val();
+            const tel = $('.u-tel').val();
+            const region = $('.u-region').val();
+            const address = $('.u-address').val();
+            const status = $('.u-status').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/AddressDao.php',
+                data:{
+                    type:'insertaddress',
+                    userid,name,tel,region,address,status
+                },
+                success(res){
+                    console.log(res);
+                }
+
+            })
+
+        });
+        //用户查看地址
+        $('.sel').click(function(){
+            const userid = $('.selid').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/AddressDao.php',
+                data:{
+                    type:'alladdress',
+                    userid
+                },
+                success(res) {
+                    console.log(res);
+                }
+            })
+        })
+        //后台查看所有用户的收货地址
+        $('.check').click(function(){
+            $.ajax({
+                type:'post',
+                url:'../../controller/AddressDao.php',
+                data:{
+                    type:'checkaddress'
+                },
+                success(res) {
+                    console.log(res);
+                }
+            })
+        })
+        //用户删除某个地址
+        $('.delbtn').click(function(){
+            const addressid = $('.delid').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/AddressDao.php',
+                data:{
+                    type:'deladdress',
+                    addressid
+                },
+                success(res) {
+                    console.log(res);
+                }
+            })
+
+        })
+        //用户修改某个地址
+        $('.upbtn').click(function(){
+            const addressid = $('.upid').val();
+            const userid = $('.u-id').val();
+            const name = $('.u-name').val();
+            const tel = $('.u-tel').val();
+            const region = $('.u-region').val();
+            const address = $('.u-address').val();
+            const status = $('.u-status').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/AddressDao.php',
+                data:{
+                    type:'resetaddress',
+                    addressid,userid,name,tel,region,address,status
+                },
+                success(res) {
+                    console.log(res);
+                }
+            })
+        })
+        //按照用户id给地址排序
+        $('.order').click(function(){
+            $.ajax({
+                type:'post',
+                url:'../../controller/AddressDao.php',
+                data:{
+                    type:'orderaddress',
+                },
+                success(res) {
+                    console.log(res);
+                }
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

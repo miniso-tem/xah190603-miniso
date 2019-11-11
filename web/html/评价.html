@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tab{
+            width: 500px;
+            /*height: 400px;*/
+            border-collapse: collapse;
+        }
+        .tab th,.tab td{
+            border: 1px solid red;
+        }
+        tr img{
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    添加评价
+    userid:
+    <input type="text" class="uid"> <br>
+    goodid:
+    <input type="text" class="gid"> <br>
+    content:
+    <input type="text" class="cont"> <br>
+
+    <button class="btn">提交评价</button>
+    <button class="check"> 查看评价</button>
+
+    <table class="tab">
+        <tr>
+            <th>用户名</th>
+            <th>头像</th>
+            <th>商品名称</th>
+            <th>商品图片</th>
+            <th>评价</th>
+            <th>时间</th>
+        </tr>
+
+    </table>
+
+    <button class="databtn">商品详情</button>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        //添加评价
+        $('.btn').click(function(){
+            const userid = $('.uid').val();
+            const goodid = $('.gid').val();
+            const content = $('.cont').val();
+            const date = (new Date()).getTime();
+            $.ajax({
+                type:'post',
+                url:'../../controller/EvaluateDao.php',
+                data:{
+                    type:'inserteval',
+                    userid,goodid,content
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        });
+        //后台管理员查看所有评价
+        $('.check').click(function(){
+            $.ajax({
+                type:'post',
+                url:'../../controller/EvaluateDao.php',
+                data:{
+                    type:'checkeval'
+                },
+                success(res){
+                    const obj = JSON.parse(res);
+                    for(let item of obj){
+                        let tr = `
+                        <tr>
+                            <td>${item.username}</td>
+                            <td>
+                                <img src="${item.avator}">
+                            </td>
+                            <td>${item.goodname}</td>
+                            <td>
+                                <img src="${item.goodimg}">
+                            </td>
+                            <td>${item.content}</td>
+                            <td>${item.date}</td>
+                        </tr>
+                        `;
+                        $('.tab').append(tr);
+                    }
+                }
+            })
+        })
+        //商品详情页显示商品的评价
+        // $('.databtn').click(function (){
+        //     const gid = 12;
+        //     $.ajax({
+        //         type:'post',
+        //         url:'../../controller/EvaluateDao.php',
+        //         data:{
+        //             type:'eval',
+        //             gid
+        //         },
+        //         success(res){
+        //             console.log(res);
+        //         }
+        //     })
+        // })
+    </script>
+</body>
+</html>

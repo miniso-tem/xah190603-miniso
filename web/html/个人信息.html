@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/个人信息.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="leftmenu">
+            <div class="avator">
+                <img src="../imgs/1572946949.jpeg" alt="">
+            </div>
+            <div class="name">15757122099</div>
+            <div class="rank">普卡</div>
+            <ul>
+                <li class="btn active-btn" data-i="0">个人信息</li>
+                <li class="btn" data-i="1">订单管理</li>
+                <li class="btn" data-i="2">地址管理</li>
+                <li class="btn" data-i="3">优惠管理</li>
+                <li class="btn" data-i="4">收藏夹</li>
+            </ul>
+            <div class="exitlogin">退出登录</div>
+        </div>
+        <div class="rightcontent">
+            <div class="card active-card">
+                <div class="row">基本信息</div>
+                <div class="info">
+                    <form action="">
+                        <div>
+                            <span>昵称</span>
+                            <input type="text" class="username" value="15757122099">
+                        </div>
+                        <div>
+                            <span>性别</span>
+                            <input type="radio" name="sex" id="male" value="male">
+                            <label for="male">男</label>
+                            <input type="radio" name="sex" id="female" value="female">
+                            <label for="female">女</label>
+                        </div>
+                        <div>
+                            <span>手机号</span>
+                            <span>15757122099</span>
+                        </div>
+                        <div>
+                            <span>出生日期</span>
+                            <select name="year" class="year">
+                                <option value=""> -- </option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                                <option value="1898">1898</option>
+                            </select>
+                            <span>年</span>
+                            <select name="month" class="month">
+                                <option value=""> -- </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <span>月</span>
+                            <select name="day" class="day">
+                                <option selected> -- </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <span>日</span>
+                        </div>
+                    </form>
+                    <div class="info-sure">保存</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="order-head">
+                    <div data-i="1" onclick="checkOrder(this)">全部订单</div>
+                    <div data-i="2" onclick="checkOrder(this)">待发货</div>
+                    <div data-i="3" onclick="checkOrder(this)">已发货</div>
+                    <div data-i="4" onclick="checkOrder(this)">待评价</div>
+                </div>
+                <div class="order-contxent">
+                </div>
+            </div>
+            <div class="card">地址管理
+                <div class="adhead">
+                    <div>以保存2条收货地址（最多可添加10条地址）</div>
+                    <div>
+                        +新建地址
+                    </div>
+                </div>
+                <div class="addscontent">
+                    <div class="addtitle">
+                        <span>详细地址</span>
+                        <span>收获人</span>
+                        <span>手机号码</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="addressinfo">
+                        <ul>
+                            <li>
+                                <div class="address">陕西省西安市雁塔区瞪羚一路</div>
+                                <div class="addressname">王小虎</div>
+                                <div class="addressphone">12345678908</div>
+                                <div class="addresslink">
+                                    <div class="resetaddress">编辑</div>
+                                    <div class="deladdress">删除</div>
+                                    <div class="statusaddress">默认地址</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="address">陕西省西安市雁塔区瞪羚一路</div>
+                                <div class="addressname">王小虎</div>
+                                <div class="addressphone">1234455666</div>
+                                <div class="addresslink">
+                                    <div class="resetaddress">编辑</div>
+                                    <div class="deladdress">删除</div>
+                                    <div class="statusaddress">默认地址</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">优惠管理</div>
+            <div class="card">收藏夹</div>
+        </div>
+    </div>
+    <div class="guess">
+        <div class="ni">猜你喜欢</div>
+        <div>
+            <div class="prevbtn"></div>
+            <div class="view">
+                <div class="swiper">
+                    <div class="guessswiper">
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                    </div>
+                    <div class="guessswiper">
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/1573012600.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                    </div>
+                    <div class="guessswiper">
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/1573041860.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                        <div class="box">
+                            <div class="show">
+                                <img src="../imgs/tu1.png" alt="">
+                            </div>
+                            <div class="desc">樱桃小丸子摆件盲盒</div>
+                            <div class="price">￥19.9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nextbtn"></div>
+        </div>
+
+    </div>
+    <div class="modelmask"></div>
+    <div class="maskmodel">
+        <div class="closemodel">×</div>
+        <div class="modelinfo">删除后订单将无法找回，是否继续操作？</div>
+        <div>
+            <div class="modelexit">取消</div>
+            <div class="modelsure">确定</div>
+        </div>
+    </div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../js/个人信息.js"></script>
+</body>
+</html>

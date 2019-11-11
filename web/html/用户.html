@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .show-imglist{
+            width: 100%;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .up-reslist{
+            width: 40px;
+            height:40px;
+        }
+        .box1{
+            width: 483px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .content{
+            width: 500px;
+            height: 200px;
+            background: pink;
+            overflow: scroll;
+        }
+        table{
+            width: 700px;
+            height: 200px;
+            border-collapse: collapse;
+        }
+        tr,td{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div>
+    用户注册
+    <input type="text" class="uname">
+    <input type="password" class="pswd">
+    <input type="number" class="tel">
+    <button class="btn">注册</button>
+    <br>
+    用户登录
+    <input type="text" class="l-uname">
+    <input type="password" class="l-pswd">
+    <button class="btn-l">登录</button>
+    <br>
+    后台用户信息管理
+    <button class="check">查询</button>
+    <br>
+    用户添加头像
+    <input type="file" class="up-img">
+    <button class="up-img-btn">上传</button>
+    <div class="show-img">
+        <img src="" alt="" class="up-res">
+    </div>
+    添加多个图片
+    <div class="box">
+        <span class="pic">商品图片:</span>
+        <span class="sellist">选择文件</span>
+        <input type="file" class="up-imglist" >
+        <button class="add-more">上传</button>
+        <div class="show-imglist">
+            <!--<div class="li">-->
+            <!--<img src="img/0.jpg" alt="" class="up-reslist">-->
+            <!--<div class="clo">×</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+<div class="box1">
+    <div class="content">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</div>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/upload.js"></script>
+<script>
+    //注册
+    $('.btn').click(function(){
+        const username = $('.uname').val();
+        const password = $('.pswd').val();
+        const tel = $('.tel').val();
+        if(username && password && tel){
+            $.ajax({
+                type:'post',
+                url:'../../controller/UserDao.php',
+                data:{
+                    type:'register',
+                    username,password,tel
+                },
+                success(res){
+                    console.log(res);
+                    $('input').val('');
+                }
+
+            })
+        }
+
+    });
+    //登录
+    $('.btn-l').click(function(){
+        const username = $('.l-uname').val();
+        const password = $('.l-pswd').val();
+        $.ajax({
+            type:'post',
+            url:'../../controller/UserDao.php',
+            data:{
+                type:'login',
+                username,password
+            },
+            success(res){
+                console.log(res);
+            }
+        })
+    });
+    //查询所有用户信息
+    $('.check').click(function(){
+        $.ajax({
+            type:'post',
+            url:'../../controller/UserDao.php',
+            data:{
+                type:'alluser'
+            },
+            success(res){
+                const arr = JSON.parse(res);
+                console.log(arr);
+                //将内容循环创建在页面上
+            }
+        })
+    });
+    //修改单个图片上传按钮的点击事件
+    $('.up-img-btn').click(function(){
+        //获取要上传的文件的信息，并做验证
+        const filedata = $('.up-img')[0].files[0];
+        upFn(filedata,function(res){
+            //将图片的img的路径设置为上传成功之后的路径
+            $('.up-res').attr('src',res);
+            //发送请求，将头像的数据添加到数据表中
+            const avator = $('.up-res').attr('src');
+            const uid =8;
+            $.ajax({
+                type:'post',
+                url:'../../controller/UserDao.php',
+                data:{
+                    type:'newavator',
+                    uid,avator
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        });
+    });
+    $('.add-more').click(function(){
+        //获取要上传的文件的信息，并做验证
+        const filedata = $('.up-imglist')[0].files[0];
+        upFn(filedata,function(res){
+            let li = `<div class="li">
+                <img src="${res}" alt="" class="up-reslist" >
+                <div class="clo" onclick="rem(this)">×</div>
+            </div>`;
+            $('.show-imglist').append(li);
+        });
+    });
+</script>
+</body>
+</html>

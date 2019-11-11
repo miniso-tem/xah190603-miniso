@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    用户id <input type="text" class="uid"> <br>
+    收货地址id <input type="text" class="address"> <br>
+    商品列表 <input type="text" class="goodlist"> <br>
+    状态 <input type="text" class="status"> <br>
+    <button class="addbtn">添加订单</button>
+    <br>
+    <input type="text" class="userid" placeholder="查看该用户的订单">
+    <button class="allorder">用户查看所有订单</button>
+    <br>
+    <input type="text" placeholder="需要删除的订单id" class="orderid">
+    <button class="delbtn">用户删除订单</button>
+    <br>
+    <input type="text" placeholder="要查看的状态" class="sta">
+    <button class="statusbtn">查看不同状态的订单</button>
+    <br>
+    <button class="check">后台管理查看所有订单</button>
+    <br>
+    <input type="text" placeholder="需要修改的订单的id" class="id">
+    <input type="text" placeholder="修改的状态值" class="staval">
+    <button class="update">后台修改状态</button>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $('.addbtn').click(function(){
+            const userid = $('.uid').val();
+            const addressid = $('.address').val();
+            const goodlist = $('.goodlist').val();
+            const status = $('.status').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/OrderDao.php',
+                data:{
+                    type:'addorder',
+                    userid,addressid,goodlist,status
+                },
+                success(res){
+                    console.log(res);
+                }
+
+            })
+        })
+        //用户查看所有订单
+        $('.allorder').click(function(){
+            const userid = $('.userid').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/OrderDao.php',
+                data:{
+                    type:'allorder',
+                    userid
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        });
+        //用户查看不同状态下的订单
+        $('.statusbtn').click(function () {
+            const status = $('.sta').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/OrderDao.php',
+                data:{
+                    type:'statusorder',
+                    status
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        });
+        //用户删除订单
+        $('.delbtn').click(function(){
+            const orderid = $('.orderid').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/OrderDao.php',
+                data:{
+                    type:'delorder',
+                    orderid
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        });
+        //后台管理系统查看所有用户的订单
+        $('.check').click(function(){
+            $.ajax({
+                type:'post',
+                url:'../../controller/OrderDao.php',
+                data:{
+                    type:'checkorder'
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        })
+        //后台管理系统修改商品的订单状态
+        $('.update').click(function(){
+            const orderid = $('.id').val();
+            const status = $('.staval').val();
+            $.ajax({
+                type:'post',
+                url:'../../controller/OrderDao.php',
+                data:{
+                    type:'updateOrder',
+                    orderid,status
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        })
+
+    </script>
+
+
+
+</body>
+</html>
